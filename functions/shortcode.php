@@ -6,7 +6,7 @@ function va_employees_shortcode( $atts ) {
  
     // define attributes and their defaults
     extract( shortcode_atts( array (
-        'style' => '',
+        'class' => '',
         'columns' => 1,
         'order' => 'desc',
         'orderby' => 'date',
@@ -43,11 +43,11 @@ function va_employees_shortcode( $atts ) {
         echo '<div class="nested grid-' . $columns . '_md-' . $columns_mobile . '_sm-1">';
 
             while ( $query->have_posts() ) {
-                
+
                 $query->the_post();
 
                 // file: functions/display-employee.php
-                va_employees_display_employee( $style );
+                va_employees_display_employee( $class );
 
             }
 

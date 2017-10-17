@@ -1,6 +1,6 @@
 <?php
 
-function va_employees_display_employee( $style ) {
+function va_employees_display_employee( $class ) {
 
     $post_id = get_the_ID();
     $employee_job = get_post_meta( $post_id, 'employee_job', true );
@@ -11,11 +11,7 @@ function va_employees_display_employee( $style ) {
 
     $output = '<div class="col">';
 
-        if ( $style == 'boxed' ) {
-            $output .= '<div class="box">';
-        }
-
-        $output .= '<div class="employee">';
+        $output .= '<div class="employee '. $class . '">';
 
             if ( $image ) {
                 $output .= '<img src="' . $image . '" />';
@@ -43,10 +39,6 @@ function va_employees_display_employee( $style ) {
 
         $output .= '</div>'; // Close .employee
 
-        if ( $style == 'boxed' ) {
-            $output .= '</div>'; // Close .box
-        }
-    
     $output .= '</div>'; // Close .col
 
     echo $output;
