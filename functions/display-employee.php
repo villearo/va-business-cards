@@ -15,8 +15,8 @@ function va_employees_display_employee() {
             $output .= '<img src="' . $image . '" />';
         }
 
-        $output .= '<div>';
-            $output .= '<h3>' . get_the_title() . '</h3>';
+        $output .= '<div class="info">';
+            $output .= '<h4>' . get_the_title() . '</h4>';
 
             if ( $employee_job ) {
                 $output .= '<div class="job">' . $employee_job . '</div>';
