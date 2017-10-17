@@ -24,7 +24,7 @@ function va_employees_setup_post_type() {
 	'exclude_from_search' => true,
 	'menu_position' => 20,
 	'has_archive' => false,
-	'menu_icon' => 'dashicons-format-quote'
+	'menu_icon' => 'dashicons-businessman'
 	);
 	
 	// https://codex.wordpress.org/Function_Reference/register_post_type

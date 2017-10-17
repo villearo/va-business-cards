@@ -14,15 +14,15 @@ add_action( 'add_meta_boxes', 'va_employees_add_meta_box' );
 
 function va_employees_meta_box_callback( $post ) {
     $post_id = get_post_custom( $post->ID );
-    $client_name = isset( $post_id['client_name'] ) ? esc_attr( $post_id['client_name'][0] ) : "";
-    $client_job = isset( $post_id['client_job'] ) ? esc_attr( $post_id['client_job'][0] ) : "";
-    $company = isset( $post_id['company'] ) ? esc_attr( $post_id['company'][0] ) : "";
-    $company_url = isset( $post_id['company_url'] ) ? esc_url( $post_id['company_url'][0] ) : "";
+    $employee_job = isset( $post_id['employee_job'] ) ? esc_attr( $post_id['employee_job'][0] ) : "";
+    $employee_email = isset( $post_id['employee_email'] ) ? esc_attr( $post_id['employee_email'][0] ) : "";
+    $employee_phone = isset( $post_id['employee_phone'] ) ? esc_attr( $post_id['employee_phone'][0] ) : "";
+    $employee_website_url = isset( $post_id['employee_website_url'] ) ? esc_url( $post_id['employee_website_url'][0] ) : "";
     wp_nonce_field( 'employee_details_nonce_action', 'employee_details_nonce' );
-    echo '<label>Client Name</label><br/><input type="text" name="client_name" id="client_name" size="100" value="'. $client_name .'" /><br/>';
-    echo '<label>Client Job</label><br/><input type="text" name="client_job" id="client_job" size="100" value="'. $client_job .'" /><br/>';
-    echo '<label>Company</label><br/><input type="text" name="company" id="company" size="100" value="'. $company .'" /><br/>';
-    echo '<label>Company URL</label><br/><input type="text" name="company_url" id="company_url" size="100" value="'. esc_url( $company_url ) .'" /><br/>';
+    echo '<label>Employee Job</label><br/><input type="text" name="employee_job" id="employee_job" size="100" value="'. $employee_job .'" /><br/>';
+    echo '<label>Employee Email</label><br/><input type="text" name="employee_email" id="employee_email" size="100" value="'. $employee_email .'" /><br/>';
+    echo '<label>Employee Phone</label><br/><input type="text" name="employee_phone" id="employee_phone" size="100" value="'. $employee_phone .'" /><br/>';
+    echo '<label>Employee Website URL</label><br/><input type="text" name="employee_website_url" id="employee_website_url" size="100" value="'. esc_url( $employee_website_url ) .'" /><br/>';
 }
 
 function va_employees_save_meta_box( $post_id ) {
@@ -49,20 +49,20 @@ function va_employees_save_meta_box( $post_id ) {
         return;
     }
  
-    if( isset( $_POST['client_name'] ) ) {
-        update_post_meta( $post_id, 'client_name', $_POST['client_name']);
+    if( isset( $_POST['employee_job'] ) ) {
+        update_post_meta( $post_id, 'employee_job', $_POST['employee_job']);
     }
 
-    if( isset( $_POST['client_job'] ) ) {
-        update_post_meta( $post_id, 'client_job', $_POST['client_job']);
+    if( isset( $_POST['employee_email'] ) ) {
+        update_post_meta( $post_id, 'employee_email', $_POST['employee_email']);
     }
  
-    if( isset( $_POST['company'] ) ) {
-        update_post_meta( $post_id, 'company', $_POST['company']);
+    if( isset( $_POST['employee_phone'] ) ) {
+        update_post_meta( $post_id, 'employee_phone', $_POST['employee_phone']);
     }
 
-    if( isset( $_POST['company_url'] ) ) {
-        update_post_meta( $post_id, 'company_url', esc_url( $_POST['company_url'] ) );
+    if( isset( $_POST['employee_website_url'] ) ) {
+        update_post_meta( $post_id, 'employee_website_url', esc_url( $_POST['employee_website_url'] ) );
     }
 
 }

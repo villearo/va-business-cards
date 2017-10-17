@@ -3,39 +3,39 @@
 function va_employees_display_employee() {
 
     $post_id = get_the_ID();
-    $client_name = get_post_meta( $post_id, 'client_name', true );
-    $client_job = get_post_meta( $post_id, 'client_job', true );
-    $company = get_post_meta( $post_id, 'company', true );
-    $company_url = esc_url( get_post_meta( $post_id, 'company_url', true ) );
+    $employee_job = get_post_meta( $post_id, 'employee_job', true );
+    $employee_email = get_post_meta( $post_id, 'employee_email', true );
+    $employee_phone = get_post_meta( $post_id, 'employee_phone', true );
+    $employee_website_url = esc_url( get_post_meta( $post_id, 'employee_website_url', true ) );
     $image = get_the_post_thumbnail_url( $post_id, 'thumbnail' );
 
-    $output = '';
-    $output .= '<div class="col testimonial"><div class="bubble">' . get_the_content() . '</div><div class="person">';
-    if ( $image ) {
-        $output .= '<img class="small" src="' . $image . '" />';
-    }
-    $output .= '<div>';
-    $output .= $client_name;
-    if ( $client_job || $company || $company_url ) {
-        $output .= '<br />';
-        $output .= '<small>';
-    }
-    $output .= $client_job;
-    if ( $client_job && ( $company || $company_url ) ) {
-        $output .= ' - ';
-    }
-    if ( $company && $company_url ) {
-        $output .= '<a href="' . $company_url . '" target="_blank">' . $company . '</a>';
-    } else if ( $company_url ) {
-        $output .= '<a href="' . $company_url . '" target="_blank">' . $company_url . '</a>';
-    } else if ( $company ) {
-        $output .= $company;
-    }
+    $output = '<div class="employee">';
+
+        if ( $image ) {
+            $output .= '<img src="' . $image . '" />';
+        }
+
+        $output .= '<div>';
+            $output .= '<h3>' . get_the_title() . '</h3>';
+
+            if ( $employee_job ) {
+                $output .= '<div class="job">' . $employee_job . '</div>';
+            }
+
+            if ( $employee_email ) {
+                $output .= '<div class="email">' . $employee_email . '</div>';
+            }
+
+            if ( $employee_phone ) {
+                $output .= '<div class="phone">' . $employee_phone . '</div>';
+            }
+
+            if ( $employee_website_url ) {
+                $output .= '<a href="' . $employee_website_url . '" target="_blank">' . $employee_website_url . '</a>';
+            }
+        $output .= '</div>';
+
     $output .= '</div>';
-    if ( $client_job || $company || $company_url ) {
-        $output .= '</small>';
-    }
-    $output .= '</div></div>';
     echo $output;
 
 }
