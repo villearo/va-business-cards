@@ -7,7 +7,7 @@ function va_employees_display_employee() {
     $employee_email = get_post_meta( $post_id, 'employee_email', true );
     $employee_phone = get_post_meta( $post_id, 'employee_phone', true );
     $employee_website_url = esc_url( get_post_meta( $post_id, 'employee_website_url', true ) );
-    $image = get_the_post_thumbnail_url( $post_id, 'thumbnail' );
+    $image = get_the_post_thumbnail_url( $post_id, 'medium' );
 
     $output = '<div class="col"><div class="employee">';
 
