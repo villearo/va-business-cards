@@ -9,7 +9,7 @@ function va_employees_display_employee() {
     $employee_website_url = esc_url( get_post_meta( $post_id, 'employee_website_url', true ) );
     $image = get_the_post_thumbnail_url( $post_id, 'thumbnail' );
 
-    $output = '<div class="col employee">';
+    $output = '<div class="col"><div class="employee">';
 
         if ( $image ) {
             $output .= '<img src="' . $image . '" />';
@@ -35,7 +35,7 @@ function va_employees_display_employee() {
             }
         $output .= '</div>';
 
-    $output .= '</div>';
+    $output .= '</div></div>';
     echo $output;
 
 }
