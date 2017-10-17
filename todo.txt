@@ -1,4 +1,4 @@
 - translations
-- clean shortcode atts ?
+- add style to shorcode atts
 - footer backlink to villearo.fi
 - readme
