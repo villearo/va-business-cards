@@ -1,0 +1,4 @@
+- translations
+- clean shortcode atts ?
+- footer backlink to villearo.fi
+- readme
