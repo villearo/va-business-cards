@@ -8,7 +8,7 @@ function va_employees_shortcode( $atts ) {
     extract( shortcode_atts( array (
         'class' => '',
         'columns' => 1,
-        'order' => 'desc',
+        'order' => 'asc',
         'orderby' => 'date',
         'posts' => -1,
         'ids' => array(),
