@@ -25,7 +25,7 @@ function va_employees_display_employee( $class ) {
                 }
 
                 if ( $employee_email ) {
-                    $output .= '<div class="email">' . $employee_email . '</div>';
+                    $output .= '<div class="email">' . esc_html(antispambot($employee_email)) . '</div>';
                 }
 
                 if ( $employee_phone ) {
