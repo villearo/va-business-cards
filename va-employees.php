@@ -12,12 +12,23 @@ License:        GPLv2 or later
 License URI:    http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+
+/**
+ * Load plugin textdomain
+ */
+function va_employees_load_textdomain() {
+  load_plugin_textdomain( 'va-employees', false, 'va-employees/languages' ); 
+}
+add_action( 'plugins_loaded', 'va_employees_load_textdomain' );
+
+
 /**
  * Global variables
  */
 $plugin_file = plugin_basename(__FILE__);							// plugin file for reference
 define( 'VA_EMPLOYEES_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );	// define the absolute plugin path for includes
 define( 'VA_EMPLOYEES_PLUGIN_URL', plugin_dir_url( __FILE__ ) );	// define the plugin url for use in enqueue
+
 
 /**
  * Includes

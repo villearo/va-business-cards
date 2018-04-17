@@ -2,12 +2,12 @@
 
 function va_employees_add_meta_box() {
     add_meta_box(
-        'employee-details',                 // The HTML id attribute for the metabox section
-        'Employee Details',                 // The title of metabox section
-        'va_employees_meta_box_callback',   // The metabox callback function
-        'va-employees',                     // Your custom post type slug
-        'normal',                           // Position can be 'normal', 'side', and 'advanced'
-        'default'                           // Priority can be 'high' or 'low'
+        'employee-details',                         // The HTML id attribute for the metabox section
+        __('Employee Details', 'va-employees'),   // The title of metabox section
+        'va_employees_meta_box_callback',           // The metabox callback function
+        'va-employees',                             // Your custom post type slug
+        'normal',                                   // Position can be 'normal', 'side', and 'advanced'
+        'default'                                   // Priority can be 'high' or 'low'
     );
 }
 add_action( 'add_meta_boxes', 'va_employees_add_meta_box' );
@@ -19,10 +19,10 @@ function va_employees_meta_box_callback( $post ) {
     $employee_phone = isset( $post_id['employee_phone'] ) ? esc_attr( $post_id['employee_phone'][0] ) : "";
     $employee_website_url = isset( $post_id['employee_website_url'] ) ? esc_url( $post_id['employee_website_url'][0] ) : "";
     wp_nonce_field( 'employee_details_nonce_action', 'employee_details_nonce' );
-    echo '<label>Employee Job</label><br/><input type="text" name="employee_job" id="employee_job" size="100" value="'. $employee_job .'" /><br/>';
-    echo '<label>Employee Email</label><br/><input type="text" name="employee_email" id="employee_email" size="100" value="'. $employee_email .'" /><br/>';
-    echo '<label>Employee Phone</label><br/><input type="text" name="employee_phone" id="employee_phone" size="100" value="'. $employee_phone .'" /><br/>';
-    echo '<label>Employee Website URL</label><br/><input type="text" name="employee_website_url" id="employee_website_url" size="100" value="'. esc_url( $employee_website_url ) .'" /><br/>';
+    echo '<label>' . __('Employee Job', 'va-employees') . '</label><br/><input type="text" name="employee_job" id="employee_job" size="100" value="'. $employee_job .'" /><br/>';
+    echo '<label>' . __('Employee Email', 'va-employees') . '</label><br/><input type="text" name="employee_email" id="employee_email" size="100" value="'. $employee_email .'" /><br/>';
+    echo '<label>' . __('Employee Phone', 'va-employees') . '</label><br/><input type="text" name="employee_phone" id="employee_phone" size="100" value="'. $employee_phone .'" /><br/>';
+    echo '<label>' . __('Employee Website URL', 'va-employees') . '</label><br/><input type="text" name="employee_website_url" id="employee_website_url" size="100" value="'. esc_url( $employee_website_url ) .'" /><br/>';
 }
 
 function va_employees_save_meta_box( $post_id ) {

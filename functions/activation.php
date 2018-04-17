@@ -4,17 +4,17 @@ function va_employees_setup_post_type() {
 
 	$args = array(
 	'labels' => array(
-		'name' => __('Employees'),
-		'singular_name' => __('Employee'),
-		'all_items' => __('All Employees'),
-		'add_new_item' => __('Add New Employee'),
-		'edit_item' => __('Edit Employee'),
-		'view_item' => __('View Employee')
+		'name' => __('Employees', 'va-employees'),
+		'singular_name' => __('Employee', 'va-employees'),
+		'all_items' => __('All Employees', 'va-employees'),
+		'add_new_item' => __('Add New Employee', 'va-employees'),
+		'edit_item' => __('Edit Employee', 'va-employees'),
+		'view_item' => __('View Employee', 'va-employees')
 	),
 	'public' => false,
 	'publicly_queryable' => false,
 	'has_archive' => false,
-	'rewrite' => array('slug' => 'employees'),
+	'rewrite' => array('slug' => __('employees', 'va-employees')),
 	'show_ui' => true,
 	'show_in_menu' => true,
 	'show_in_nav_menus' => true,
