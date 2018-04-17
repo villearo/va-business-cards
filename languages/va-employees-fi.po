@@ -1,0 +1,89 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: VA Employees\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-17 14:54+0000\n"
+"PO-Revision-Date: 2018-04-17 14:58+0000\n"
+"Last-Translator: Ville Aro <ville_aro@icloud.com>\n"
+"Language-Team: Suomi\n"
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: functions/activation.php:10
+msgid "Add New Employee"
+msgstr "Lisää uusi työntekijä"
+
+#: functions/activation.php:9
+msgid "All Employees"
+msgstr "Kaikki työntekijät"
+
+#. Description of the plugin
+msgid ""
+"Custom post type for employees. Shortcode usage: [employees] or more "
+"specific [employees order='asc' orderby='date' posts='10' columns='3' "
+"ids='60, 64']"
+msgstr ""
+"Custom post type työntekijöiden esittämiseen. Shortcode: [employees] tai "
+"tarkemmin: [employees order='asc' orderby='date' posts='10' columns='3' "
+"ids='60, 64']"
+
+#: functions/activation.php:11
+msgid "Edit Employee"
+msgstr "Muokkaa työntekijää"
+
+#: functions/activation.php:8
+msgid "Employee"
+msgstr "Työntekijä"
+
+#. The HTML id attribute for the metabox section
+#: functions/meta-boxes.php:6
+msgid "Employee Details"
+msgstr "Työntekijän tiedot"
+
+#: functions/meta-boxes.php:23
+msgid "Employee Email"
+msgstr "Työntekijän sähköposti"
+
+#: functions/meta-boxes.php:22
+msgid "Employee Job"
+msgstr "Työtekijän ammatti/titteli"
+
+#: functions/meta-boxes.php:24
+msgid "Employee Phone"
+msgstr "Työntekijän puhelin"
+
+#: functions/meta-boxes.php:25
+msgid "Employee Website URL"
+msgstr "Työntekijän sivuston URL"
+
+#: functions/activation.php:7
+msgid "Employees"
+msgstr "Työntekijät"
+
+#: functions/activation.php:17
+msgid "employees"
+msgstr "tyontekijat"
+
+#. URI of the plugin
+msgid "https://github.com/villearo/va-employees"
+msgstr "https://github.com/villearo/va-employees"
+
+#. Author URI of the plugin
+msgid "https://villearo.fi/"
+msgstr "https://villearo.fi/"
+
+#. Name of the plugin
+msgid "VA Employees"
+msgstr "VA Employees"
+
+#: functions/activation.php:12
+msgid "View Employee"
+msgstr "Näytä työntekijä"
+
+#. Author of the plugin
+msgid "Ville Aro"
+msgstr "Ville Aro"
