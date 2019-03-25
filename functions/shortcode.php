@@ -1,6 +1,5 @@
 <?php
 
-
 if ( function_exists( 'va_employees_display_employee' ) ) {
     function va_employees_shortcode( $atts ) {
 
@@ -10,8 +9,6 @@ if ( function_exists( 'va_employees_display_employee' ) ) {
         if ( !current_theme_supports('va-employees') ) {
             wp_enqueue_style( 'employees-styles', VA_EMPLOYEES_PLUGIN_URL . 'styles/employees-styles.css' );
         }
-
-        ob_start();
      
         // define attributes and their defaults
         extract( shortcode_atts( array (
@@ -45,30 +42,24 @@ if ( function_exists( 'va_employees_display_employee' ) ) {
             'posts_per_page' => $posts,
             'post__in' => $id_array,
         );
-        $query = new WP_Query( $options );
+        $employees_array = get_posts( $options );
 
-        // Loop
-        if ( $query->have_posts() ) {
+        ob_start();
+
+        if(!empty($employees_array)) {
             echo '<div class="nested grid-' . $columns . '_md-' . $columns_mobile . '_sm-1">';
-
-                while ( $query->have_posts() ) {
-
-                    $query->the_post();
-
-                    // file: functions/display-employee.php
-                    va_employees_display_employee( $class );
-
+                foreach ($employees_array as $post) {
+                    //setup_postdata( $post );
+                    $post_id = $post->ID;
+                    echo va_employees_display_employee( $post_id, $class ); // file: functions/display-employee.php
                 }
-
-                wp_reset_postdata(); 
-
+                //wp_reset_postdata();
             echo '</div>';
-        };
+        }
 
         $output = ob_get_clean();
         return $output;
 
     }
     add_shortcode( 'employees', 'va_employees_shortcode' );
-
 }
