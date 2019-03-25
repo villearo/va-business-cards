@@ -1,8 +1,7 @@
 <?php
 
-function va_employees_display_employee( $class ) {
+function va_employees_display_employee( $post_id, $class ) {
 
-    $post_id = get_the_ID();
     $employee_job = get_post_meta( $post_id, 'employee_job', true );
     $employee_email = get_post_meta( $post_id, 'employee_email', true );
     $employee_phone = get_post_meta( $post_id, 'employee_phone', true );
@@ -41,6 +40,6 @@ function va_employees_display_employee( $class ) {
 
     $output .= '</div>'; // Close .col
 
-    echo $output;
+    return $output;
 
 }
