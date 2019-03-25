@@ -7,6 +7,7 @@ function va_employees_display_employee( $post_id, $class ) {
     $employee_phone = get_post_meta( $post_id, 'employee_phone', true );
     $employee_website_url = esc_url( get_post_meta( $post_id, 'employee_website_url', true ) );
     $image = get_the_post_thumbnail_url( $post_id, 'medium' );
+    $title = get_the_title($post_id);
 
     $output = '<div class="col">';
 
@@ -17,7 +18,7 @@ function va_employees_display_employee( $post_id, $class ) {
             }
 
             $output .= '<div class="info">';
-                $output .= '<h4>' . get_the_title() . '</h4>';
+                $output .= '<h4>' . $title . '</h4>';
 
                 if ( $employee_job ) {
                     $output .= '<div class="job">' . $employee_job . '</div>';
