@@ -1,5 +1,6 @@
 <?php
 
+
 if ( function_exists( 'va_employees_display_employee' ) ) {
     function va_employees_shortcode( $atts ) {
 
@@ -27,22 +28,14 @@ if ( function_exists( 'va_employees_display_employee' ) ) {
             $columns_mobile = 2;
         }
 
-        // Exlpode ids
-        if ( $ids ) {
-            $id_array = explode(',', $ids);
-        } else {
-            $id_array = '';
-        }
-
         // define query parameters based on attributes
-        $options = array(
+        $employees_array = get_posts( array(
             'post_type' => 'va-employees',
             'order' => $order,
             'orderby' => $orderby,
             'posts_per_page' => $posts,
-            'post__in' => $id_array,
-        );
-        $employees_array = get_posts( $options );
+            'include' => $ids,
+        ) );
 
         ob_start();
 
@@ -62,4 +55,5 @@ if ( function_exists( 'va_employees_display_employee' ) ) {
 
     }
     add_shortcode( 'employees', 'va_employees_shortcode' );
+
 }
